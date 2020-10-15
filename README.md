@@ -57,3 +57,11 @@ __注意__ ，由于这个库是基于 __AES-128__ 的，因此请确保传入�
 #### 另附源码详解一份：
 
 [AES加密 - iOS与Java的同步实现](http://www.welkinx.com/2016/07/30/10/)
+
+#### Installation
+Swift Package Manager
+- iOS: Open Xcode, File->Swift Packages, search input **https://github.com/janlionly/AESCipher-iOS.git**, and then select branch **master**.
+- Or add dependencies in your `Package.swift`:
+``` ruby
+.package(url: "https://github.com/janlionly/AESCipher-iOS.git", .branch("master")),
+```
