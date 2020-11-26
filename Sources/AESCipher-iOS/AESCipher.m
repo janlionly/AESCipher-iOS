@@ -13,15 +13,19 @@
 
 NSString const *kInitVector = @"A-16-Byte-String";
 size_t const kKeySize = kCCKeySizeAES128;
+static NSString *AES_KEY = nil;
 
 NSString *dynamicAESKey() {
-    static NSString *key = nil;
-    if (key == nil) {
+    if (AES_KEY == nil) {
         NSProcessInfo *info = NSProcessInfo.processInfo;
-        key = [[info.globallyUniqueString stringByReplacingOccurrencesOfString:@"-" withString:@""] substringToIndex:16];
+        AES_KEY = [[info.globallyUniqueString stringByReplacingOccurrencesOfString:@"-" withString:@""] substringToIndex:16];
     }
     
-    return key;
+    return AES_KEY;
+}
+
+void clearDynamicAESKey() {
+	AES_KEY = nil;
 }
 
 NSData * cipherOperation(NSData *contentData, NSData *keyData, CCOperation operation) {

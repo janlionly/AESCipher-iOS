@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 
 NSString *dynamicAESKey(void);
+void clearDynamicAESKey();
 NSString *aesEncryptStringDynamicKey(NSString *content);
 NSString *aesDecryptStringDynamicKey(NSString *content);
 NSData *aesEncryptDataDynamicKey(NSData *data);
